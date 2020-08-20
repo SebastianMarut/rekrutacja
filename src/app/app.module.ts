@@ -13,6 +13,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TextAreaComponent } from '@components/text-area/text-area.component';
 import { MapComponent } from '@components/map/map.component';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    LeafletModule
+    LeafletModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

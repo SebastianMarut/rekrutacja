@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Subscription} from 'rxjs';
 import {LaboratoriesService} from '@services/laboratories/laboratories.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-text-input',
@@ -16,7 +17,8 @@ export class TextInputComponent implements OnInit, OnDestroy {
   dataSubscriber: Subscription;
 
   constructor(private laboratoriesService: LaboratoriesService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.urlForm = this.formBuilder.group({
@@ -40,6 +42,10 @@ export class TextInputComponent implements OnInit, OnDestroy {
         this.buttonText = 'Pobierz';
       },
       (error) => {
+        this.snackBar.open('Błąd podczas pobierania danych', '', {
+          duration: 4000,
+          panelClass: ['snack-bar-multiline']
+        });
         this.isFetching = false;
         this.buttonText = 'Pobierz';
       }
