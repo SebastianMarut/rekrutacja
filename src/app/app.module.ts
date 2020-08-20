@@ -10,11 +10,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TextAreaComponent } from '@components/text-area/text-area.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TextInputComponent
+    TextInputComponent,
+    TextAreaComponent
   ],
   imports: [
     BrowserModule,
