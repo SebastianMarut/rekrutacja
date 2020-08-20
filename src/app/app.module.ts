@@ -11,12 +11,15 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TextAreaComponent } from '@components/text-area/text-area.component';
+import { MapComponent } from '@components/map/map.component';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
     AppComponent,
     TextInputComponent,
-    TextAreaComponent
+    TextAreaComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { TextAreaComponent } from '@components/text-area/text-area.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]
